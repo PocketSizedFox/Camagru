@@ -1,6 +1,9 @@
 <?php
 include "./users.php";
 session_start();
+if (!isset($_SESSION['logged_user_id'])){
+    header('location: ../homepage.php');
+}
 $db = mysqli_connect("localhost:3306","username","password","Camagru");
 $username = $_SESSION['logged_user_id'];
 echo "(".$username.")";
@@ -8,7 +11,7 @@ $tablename = $username."posts";
 $ret = mysqli_query($db,"SELECT id FROM `$tablename`");
 $postid = (mysqli_num_rows($ret)+1);
 $postname = "post-".$postid."-".$username.".".strtolower(pathinfo(basename($_FILES["fileToUpload"]["name"]),PATHINFO_EXTENSION));
-$target_dir = "database/posts/";
+$target_dir = "../database/posts/";
 $target_file = $target_dir.$postname;
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo(basename($_FILES["fileToUpload"]["name"]),PATHINFO_EXTENSION));
