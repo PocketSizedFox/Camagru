@@ -215,20 +215,23 @@ window.onclick = function(event) {
     {
         upload.parentNode.removeChild(upload);
         camera.parentNode.removeChild(camera);
+        document.getElementById("divposticon").style.height = "0px";
     }
     if (event.target.matches('.fa-plus-circle'))
     {
-            event.target.parentNode.style.height = "200px";
-            event.target.parentNode.style.width = "500px";
+            event.target.parentNode.style.height = "50px";
+            event.target.parentNode.style.width = "150px";
         var button = document.createElement('button');
             button.setAttribute('class', 'uploadbutton');
             button.setAttribute('id', 'uploadbutton');
+            button.innerHTML = "Upload";
             var funct = "uploading()";
             button.setAttribute('onclick', funct);
             document.getElementById("addposticon").appendChild(button);
         var button = document.createElement('button');
             button.setAttribute('class', 'camerabutton');
             button.setAttribute('id', 'camerabutton');
+            button.innerHTML = "Camera";
             var funct = "camera()";
             button.setAttribute('onclick', funct);
             document.getElementById("addposticon").appendChild(button);

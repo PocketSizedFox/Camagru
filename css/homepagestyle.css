@@ -405,3 +405,31 @@ hr {
     left: 10;
     border-radius: 5px;
 }
+.uploadbutton{
+  width: 100px;
+      height: 35px;
+      position: relative;
+      left: 5;
+      border-radius: 10px;
+      background-color: rgb(255,255,255,0.8);
+      font-family: Palatino;
+      outline: none;
+      font-size: 15px;
+}
+.camerabutton{
+  width: 100px;
+  height: 35px;
+  position: relative;
+  left: 33px;
+  top: 5;
+  border-radius: 10px;
+  background-color: rgb(255,255,255,0.8);
+  font-family: Palatino;
+  outline: none;
+  font-size: 15px;
+}
+.camerabutton:hover, .uploadbutton:hover  {
+  border-color: rgba(100, 100, 100, 0.8);
+  color: white;
+  background-color: rgba(100, 100, 100, 0.8);
+}
