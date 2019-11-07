@@ -123,7 +123,7 @@ input[type=text], select {
 }
 .image {
     position: relative;
-    top: 300px;
+    top: 150px;
     left: 50%;
     margin-left: -300px;
     max-width: 600px;
@@ -167,3 +167,29 @@ body {
     background-size: cover;
     background-color: #464646;
   }
+  .buttonstyle {
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: rgb(255,255,255,0.8);
+    font-family: Palatino;
+    outline: none;
+    font-size: 15px;
+    z-index: 4;
+    display: inline-block;
+    position: relative;
+    text-align: center; 
+}
+.buttonstyle:hover {
+  border-color: rgba(100, 100, 100, 0.8);
+  color: white;
+  background-color: rgba(100, 100, 100, 0.8);
+}
+.uploadposition{
+    top: 190px;
+    left: 150px;
+}
+.selectfileposition{
+    top: -480px;
+    left: 25px;
+}
