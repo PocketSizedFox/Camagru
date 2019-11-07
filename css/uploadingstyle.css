@@ -109,17 +109,25 @@ input[type=text], select {
     box-sizing: border-box;
 }
 .custom-file-upload {
-    border-radius: 4px;
+    border-radius: 8px;
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
     position: relative;
+    background-color: rgb(255,255,255,0.8);
     left: 4px;
-    top: 10px;
+    top: -481px;
     z-index: 4;
+    height: 22px;
+    font-family: palatino;
+    font-size: 15px;
+    width: 75px;
+    text-align: center;
 }
 .custom-file-upload:hover {
-    background-color: #ddd;
+    border-color: rgba(100, 100, 100, 0.8);
+    color: white;
+    background-color: rgba(100, 100, 100, 0.8)
 }
 .image {
     position: relative;

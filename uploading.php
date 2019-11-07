@@ -28,8 +28,8 @@ session_start();
         <div class="imagediv">
         <form class="uploadingpagestyle" action="backend/upload.php" method="post" enctype="multipart/form-data">
                         <img id="output" class="image">
-                        <label for="fileToUpload">
-                        <button class="buttonstyle selectfileposition">Select File</button> 
+                        <label for="fileToUpload" class="custom-file-upload">
+                            Select File
                         </label>
                         <input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpeg, image/jpg" onchange="loadFile(event)">
                         <label for="button-upload">
