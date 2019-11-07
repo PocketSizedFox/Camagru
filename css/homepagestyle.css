@@ -1,0 +1,407 @@
+.outer {
+  background: rgb(32, 38, 38);
+  height: 80%;
+  width: 100%;
+}
+.icons {
+  top: 35%;
+  right: 10%;
+  position: absolute;
+  color: #ffffff;
+}
+body {
+  background-image: url(./../home.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+.home {
+  top: 0;
+  right: 100%;
+  position: absolute;
+  color: #ffffff;
+}
+.center {
+  bottom: 5%;
+  right: 0;
+  left: 0;
+  position: absolute;
+  margin: auto;
+}
+.center1 {
+  top: 35%;
+  left: 20%;
+  position: absolute;
+  margin-left: -175px;
+}
+.headline {
+  border-radius: 0px 0px 50px 50px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  height: 10%;
+  width: 100%;
+  right: 0;
+  left: 0;
+  top: 0;
+  position: absolute;
+  margin: auto;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+}
+.search {
+  min-width: 400px;
+  width: 60%;
+  position: relative;
+  display: flex;
+}
+.searchTerm {
+  min-width: 400px;
+  width: 60%;
+  border: 3px solid rgb(0,0,0,0.4);
+  border-right: none;
+  padding: 5px;
+  height: 30px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+.searchTerm:focus {
+  color: #888888;
+}
+.searchButton {
+  width: 40px;
+  height: 30px;
+  position: relative;
+  top: 0px;
+  border: 1px rgb(0,0,0,0.4);
+  background: rgb(0,0,0,0.4);
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+  outline: none;
+}
+.wrap {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.posts {
+  top: 15%;
+  bottom: 0;
+  right: 0;
+  left: 50%;
+  margin-left: -350px;
+  position: absolute;
+  width: 700px;
+  height: 80%;
+  background: rgb(31,31,31,0.7);
+  border-radius: 5px;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+}
+.posts::-webkit-scrollbar {
+  width: 0 !important;
+}
+.post {
+  top: 50px;
+  left: 50px;
+  border: 1px solid #888888;
+  height: 800px;
+  background: #FFFFFF;
+  width: 600px;
+  position: relative;
+  border-radius: 4px;
+}
+.postimage {
+  position: relative;
+  min-height: 600px;
+  max-height: 600px;
+  min-width: 600px;
+  max-width: 600px;
+  object-fit: cover;
+}
+.prevpostimage {
+  position: relative;
+  min-height: 600px;
+  max-height: 600px;
+  min-width: 600px;
+  max-width: 600px;
+  object-fit: cover;
+  left: 50%;
+  margin-left: -300px;
+}
+.postpreview {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  margin-left: -400px;
+  height: 900px;
+  background: rgb(255,255,255,0.9);
+  width: 800px;
+  position: relative;
+  border-radius: 15px;
+  z-index: 5;
+}
+.xxxlarge {
+  font-size:48px!important;
+}
+.xxxlarge:hover {
+  cursor: pointer!important;
+}
+.large {
+  font-size:24px!important;
+}
+img {
+  top: -53px;
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+}
+.avatar {
+  position: relative;
+  left: 10px;
+  top: 10px;
+  min-height: 70px;
+  max-height: 70px;
+  min-width: 70px;
+  max-width: 70px;
+  object-fit: cover;
+  border-radius: 35px;
+}
+.prevavatar {
+  position: relative;
+  left: 10px;
+  top: 10px;
+  min-height: 70px;
+  max-height: 70px;
+  min-width: 70px;
+  max-width: 70px;
+  object-fit: cover;
+  border-radius: 35px;
+}
+.username {
+  position: relative;
+  font-family: "comic sans ms";
+  color: #424242;
+  top: -75px;
+  left: 100px;
+}
+.prevusername {
+  position: relative;
+  font-family: "comic sans ms";
+  color: #424242;
+  top: -75px;
+  left: 100px;
+}
+.imgic {
+  position: relative;
+  top: -45px;
+  left: 10px;
+  max-width: 100%;
+  max-height: 100%;
+  width: 95%;
+  color: #424242;
+}
+.previmgic {
+  position: relative;
+  top: -45px;
+  left: 10px;
+  max-width: 600px;
+  max-height: 100%;
+  color: #424242;
+  left: 50%;
+  margin-left: -300px;
+}
+.likeicon {
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+}
+.prevlikeicon {
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+}
+.commenticon {
+  position: relative;
+  right: -500px;
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+}
+.prevcommenticon {
+  position: relative;
+  right: -500px;
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+}
+/*.commenticon:hover .commenticon:focus .likeicon:hover .likeicon:focus {
+  background-color: #c2c2c2;
+}*/
+.dropbtn {
+  background-color: rgb(0,0,0,0.8);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #888888;
+}
+
+.dropdown {
+  top: 10px;
+  left: 10px;
+  position: sticky;
+  display: inline-block;
+  outline: none;
+  z-index: 5;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+  transition: 0.6s;
+}
+.sidebar {
+  top: 245px;
+  left: 900px;
+  width: 300px;
+  height: 70px;
+  background: rgb(255,255,255,0.8);
+  border-radius: 5px;
+  box-shadow: 5px 3px rgb(0,0,0,0.4);
+  position: fixed;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s;
+}
+input[type=file] {
+  display: none;
+}
+.comform {
+  height: 40px;
+}
+.comments {
+  position: relative;
+  z-index: 4;
+  top: -100px;
+  left: 98px;
+  max-height: 86px;
+  min-height: 86px;
+  max-width: 600px;
+  min-width: 600px;
+  overflow: scroll;
+  transition: 0.6s;
+}
+.comments::-webkit-scrollbar {
+  width: 0 !important;
+}
+.comment {
+  width: 280px;
+  height: 40px;
+  border: 1px solid #c2c2c2;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.custom-file-upload {
+  border-radius: 4px;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  position: relative;
+  left: 4px;
+  top: 10px;
+  z-index: 4;
+}
+.custom-file-upload:hover {
+  background-color: #ddd;
+}
+hr {
+  clear: both;
+}
+.me {
+  position: absolute;
+  bottom: 0%;
+  text-align: right;
+  font-family: monospace;
+  font-style: italic;
+  width: 99%;
+}
+.copyright {
+  position: relative;
+  left: -10px;
+}
+.commentsection {
+  position: relative;
+  height: 0px;
+  width: 550px;
+  left: 10px;
+  word-break: break-all;
+}
+.comformdiv {
+  min-width: 600px;
+  top: 45px;
+  left: 98px;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  z-index: 4;
+}
+.headlineicon {
+  text-decoration: none;
+  color: #ffffff;
+}
+.prevavdiv {
+    position: relative;
+    max-width: 600px;
+    left: 50%;
+    margin-left: -300px;
+}
+.addposticon {
+    position: sticky;
+    top: 7;
+    width: 33px;
+    height: 0;
+    left: 10;
+    border-radius: 5px;
+}

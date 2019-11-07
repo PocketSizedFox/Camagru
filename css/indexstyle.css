@@ -1,0 +1,104 @@
+* {
+  margin: 0 auto;
+}
+
+.center {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    margin: auto;
+  }
+  
+  .center1 {
+    top: 20%;
+    bottom: 0;
+    right: 0;
+    left: 50%;
+    position: relative;
+    margin-left: -200px;
+  }
+  .center2 {
+    top: 65%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+  }
+  
+  .outer {
+    background: #000000;
+    height: 390px;
+    width: 100%;
+    opacity: 0.7;
+  }
+  
+  svg {
+    animation: fill 1s ease forwards 4s;
+  }
+  
+  svg path:nth-child(1) {
+    stroke-dasharray: 2230px;
+    stroke-dashoffset: 2230px;
+    animation: outline 4s ease forwards 0.5s;
+  }
+  body {
+    background-image: url(./../loading.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+  }
+  @keyframes outline {
+    to {
+      stroke-dashoffset: 0px;
+    }
+  }
+  
+  @keyframes fill {
+    from {
+      fill: transparent;
+    }
+  
+    to {
+      fill: #ffffff;
+    }
+  }
+  
+  @-webkit-keyframes outline {
+    to {
+      stroke-dashoffset: 0px;
+    }
+  }
+  
+  @-webkit-keyframes fill {
+    from {
+      fill: transparent;
+    }
+  
+    to {
+      fill: #999999;
+    }
+  }
+  .loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #999999;
+    width: 70px;
+    height: 70px;
+    max-width: 70px;
+    max-height: 70px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

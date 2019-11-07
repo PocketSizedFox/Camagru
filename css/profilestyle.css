@@ -1,0 +1,232 @@
+.outer {
+    background: rgb(32, 38, 38);
+    height: 790px;
+    width: 100%;
+}
+
+.center {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    margin: auto;
+}
+
+.icons {
+    top: 35%;
+    right: 10%;
+    position: absolute;
+    color: #ffffff;
+}
+
+input[type=password], select {
+    position: relative;
+    width: 280px;
+    height: 40px;
+    bottom: 10px;
+    left: 0;
+    margin: 8px 0;
+    border: 1px solid #c2c2c2;
+    border-radius: 5px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.home {
+    top: 0;
+    right: 100%;
+    position: absolute;
+    color: #888888;
+}
+
+.center1 {
+    top: 35%;
+    left: 20%;
+    position: absolute;
+    margin-left: -175px;
+}
+
+.headline {
+    border-radius: 0px 0px 50px 50px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    height: 10%;
+    width: 100%;
+    right: 0;
+    left: 0;
+    top: 0;
+    position: absolute;
+    margin: auto;
+    position: fixed;
+    z-index: 1;
+    overflow-x: hidden;
+}
+
+.search {
+    min-width: 400px;
+    width: 60%;
+    position: relative;
+    display: flex;
+}
+
+.searchTerm {
+    position: relative;
+    min-width: 400px;
+    width: 60%;
+    border: 3px solid rgb(0,0,0,0.4);
+    border-right: none;
+    padding: 5px;
+    height: 30px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    color: #9DBFAF;
+}
+
+    .searchTerm:focus {
+        color: #888888;
+    }
+
+.searchButton {
+    width: 40px;
+    height: 30px;
+    position: relative;
+    top: 0px;
+    border: 1px rgb(0,0,0,0.4);
+    background: rgb(0,0,0,0.4);
+    text-align: center;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+}
+
+.wrap {
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.xxxlarge {
+    font-size: 48px !important;
+}
+
+    .xxxlarge:hover {
+        cursor: pointer !important;
+    }
+
+.large {
+    font-size: 24px !important;
+}
+
+input[type=file] {
+    display: none;
+}
+
+input[type=submit] {
+    display: none;
+}
+
+.userinputname {
+    position: relative;
+    width: 280px;
+    height: 40px;
+    bottom: 10px;
+    left: 0;
+    margin: 8px 0;
+    border: 1px solid #c2c2c2;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.custom-file-upload {
+    border-radius: 4px;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    position: relative;
+    left: 4px;
+    top: 10px;
+    z-index: 4;
+}
+
+    .custom-file-upload:hover {
+        background-color: #ddd;
+    }
+
+.image {
+    max-width: 600px;
+    max-height: 600px;
+    min-width: 600px;
+    min-height: 600px;
+    object-fit: cover;
+}
+
+.imagediv {
+    top: 50%;
+    left: 50%;
+    left: -350px;
+    max-width: 600px;
+    max-height: 700px;
+    min-width: 700px;
+    min-height: 600px;
+}
+
+.headlineicon {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.loginpagestyle {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    top: 25%;
+    left: 50%;
+    margin-left: -250;
+    text-align: center;
+    background-color: rgb(0,0,0,0.8);
+    border-radius: 8px;
+}
+
+.stylesigninform {
+    position: relative;
+    top: 20%;
+}
+
+body {
+    background-image: url(./../home.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #464646;
+}
+
+.center1 {
+    top: 35%;
+    left: 20%;
+    position: absolute;
+    margin-left: -175px;
+}
+
+.buttonstyle {
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    background-color: rgb(255,255,255,0.8);
+    font-family: Palatino;
+    outline: none;
+    font-size: 15px;
+}
+
+    .buttonstyle:hover {
+        border-color: rgba(100, 100, 100, 0.8);
+        color: white;
+        background-color: rgba(100, 100, 100, 0.8);
+    }
