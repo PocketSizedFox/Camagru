@@ -404,6 +404,7 @@ hr {
     height: 0;
     left: 10;
     border-radius: 5px;
+    z-index: 5;
 }
 .uploadbutton{
   width: 100px;
