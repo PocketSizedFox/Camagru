@@ -5,7 +5,7 @@ session_start();
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <script src="js/uploadingjs.js">
-</script>
+s</script>
     <head>
     <link rel="stylesheet" type="text/css" href="css/uploadingstyle.css">
         <title>
@@ -23,6 +23,7 @@ session_start();
                 </div>
             </div>
     </header>
+    <?php if (!isset($_SESSION['logged_user_id'])){echo "<script>alert('Please Login To Continue'); window.location.href = \"login.php\";</script>";}?>
     <body style="background-color: #e6e6e6">
     <div id="upload" class="registerpagestyle">
         <div class="imagediv">

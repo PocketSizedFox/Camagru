@@ -67,8 +67,12 @@ function addpost(username, postid, avatar){
 function uploading(){
     window.location.href = "uploading.php";
 }
-function camerq(){
+function camera(){
     window.location.href = "camera.php";
+}
+function notlogged(){
+    alert("Please Login To Continue");
+    window.location.href = "login.php";
 }
 function addpreviewpost(postid){
     var username = postid.slice(7);
@@ -221,19 +225,25 @@ window.onclick = function(event) {
     {
             event.target.parentNode.style.height = "50px";
             event.target.parentNode.style.width = "150px";
-        var button = document.createElement('button');
+            var button = document.createElement('button');
             button.setAttribute('class', 'uploadbutton');
             button.setAttribute('id', 'uploadbutton');
             button.innerHTML = "Upload";
-            var funct = "uploading()";
-            button.setAttribute('onclick', funct);
+            button.setAttribute('onclick', "uploading();")
             document.getElementById("addposticon").appendChild(button);
-        var button = document.createElement('button');
+            var button = document.createElement('button');
             button.setAttribute('class', 'camerabutton');
             button.setAttribute('id', 'camerabutton');
             button.innerHTML = "Camera";
-            var funct = "camera()";
-            button.setAttribute('onclick', funct);
+            var url = "./backend/uploadbutton.php?button=camera";
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url);
+            xhr.send();
+            xhr.onload = function() {
+                var responseObj = xhr.response;
+                var funct = responseObj;
+                button.setAttribute('onclick', funct);
+            };
             document.getElementById("addposticon").appendChild(button);
 
     }

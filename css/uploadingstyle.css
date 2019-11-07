@@ -115,7 +115,7 @@ input[type=text], select {
     cursor: pointer;
     position: relative;
     background-color: rgb(255,255,255,0.8);
-    left: 4px;
+    left: 22px;
     top: -481px;
     z-index: 4;
     height: 22px;
