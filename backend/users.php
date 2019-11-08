@@ -72,9 +72,27 @@ function postadd($username,$image) {
 }
 function user_add($username,$name,$avatar,$surname,$number,$email,$password,$verified,$notify){
     if (($db = mysqli_connect("localhost:3306","username","password","Camagru")))
-    $part1 = "(username,name,avatar,surname,contact,email,password,verified,notify)";
-    $part2 = "('$username','$name','$avatar','$surname','$number','$email','$password','$verified','$notify')";
+	$hash = md5( rand(0,1000));
+    $part1 = "(username,name,avatar,surname,contact,email,password,verified,notify,hash)";
+    $part2 = "('$username','$name','$avatar','$surname','$number','$email','$password','$verified','$notify','$hash')";
     mysqli_query($db,"INSERT INTO users $part1 VALUES $part2");
+	if ($verified != "Yes")
+	{
+		$to      = $email;
+		$subject = 'Signup | Verification'; 
+		$message = '
+		 
+		Thanks for signing up '.$name.'!
+		Your account has been created, you can start posting, commenting, and loging in after you have activated your account by pressing the url below.
+		 
+		Please click this link to activate your account:
+		localhost:81/backend/verify.php?email='.$email.'&hash='.$hash.'
+		 
+		';
+		                     
+		$headers = 'From:noreply@klees&ldu-pree.camagru.com' . "\r\n";
+		mail($to, $subject, $message, $headers);
+	}
     posts($username);
     mysqli_close($db);
 }

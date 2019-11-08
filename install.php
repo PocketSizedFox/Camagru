@@ -20,11 +20,12 @@ $surname = "surname TEXT(50)";
 $number = "contact TEXT(10)";
 $email = "email TEXT(50)";
 $password = "password TEXT(50000)";
-$verified = "verified TEXT(50)";
-$notify = "notify TEXT(50)";
-mysqli_query($db,"CREATE TABLE users ($username,$name,$avatar,$surname,$number,$email,$password,$verified,$notify)");
+$verified = "verified TEXT(3)";
+$notify = "notify TEXT(3)";
+$hash = "hash TEXT(35)";
+mysqli_query($db,"CREATE TABLE users ($username,$name,$avatar,$surname,$number,$email,$password,$verified,$notify,$hash)");
 //defaults
-user_add("ldu-pree","Liam","database/avatars/ldu-pree.jpg","Du Preez","0123456789","hello.dieliam@gmail.com",hash("sha1","l"),"Yes","Yes");
+user_add("ldu-pree","Liam","database/avatars/ldu-pree.jpg","Du Preez","0123456789","hello.dieliam@gmail.com",hash("sha1","l"),"No","Yes");
 user_add("klees","Kaelin","database/avatars/klees.jpg","Lees","0123456789","k",hash("sha1","k"),"Yes","Yes");
 user_add("l","l","database/avatars/default.jpg","l","0123456789","l",hash("sha1","l"),"Yes","Yes");
 user_add("m","m","database/avatars/default.jpg","m","0123456789","m",hash("sha1","m"),"Yes","No");
