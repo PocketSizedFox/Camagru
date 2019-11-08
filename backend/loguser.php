@@ -33,7 +33,7 @@
 				if (is_registered($usr) && user_pass($usr, hash("sha1", $pw))) {
 				    $_SESSION['logged_user_id'] = $usr;
 				    echo "3<br>";
-				    //header('location: ../homepage.php');
+				    header('location: ../homepage.php');
 				} else {
 				    echo "<br>false4<br>";
 				}
