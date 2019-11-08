@@ -70,10 +70,10 @@ function postadd($username,$image) {
     
     mysqli_close($db);
 }
-function user_add($username,$name,$avatar,$surname,$number,$email,$password,$verified){
+function user_add($username,$name,$avatar,$surname,$number,$email,$password,$verified,$notify){
     if (($db = mysqli_connect("localhost:3306","username","password","Camagru")))
-    $part1 = "(username,name,avatar,surname,contact,email,password,verified)";
-    $part2 = "('$username','$name','$avatar','$surname','$number','$email','$password','$verified')";
+    $part1 = "(username,name,avatar,surname,contact,email,password,verified,notify)";
+    $part2 = "('$username','$name','$avatar','$surname','$number','$email','$password','$verified','$notify')";
     mysqli_query($db,"INSERT INTO users $part1 VALUES $part2");
     posts($username);
     mysqli_close($db);
