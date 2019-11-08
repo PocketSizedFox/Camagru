@@ -39,6 +39,8 @@ function addpost(username, postid, avatar){
         document.getElementById(idname3).appendChild(i);
     var p = document.createElement('p');
         p.setAttribute('class', 'likes');
+    var postlikes = "post-" + postid + "-" + username + "-likes";
+        p.setAttribute('id', postlikes);
         var url = "backend/likes.php?postname=post-"+postid+"-"+username+"&username="+username;
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url);
@@ -63,6 +65,17 @@ function addpost(username, postid, avatar){
     var br = document.createElement('br');
         document.getElementById("posts").appendChild(br);
         return;
+}
+function updatelikes(opt, post) {
+    var url = "backend/updatelikes.php?postname="+post+"&opt="+opt;
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.send();
+    xhr.onload = function () {
+        let responseObj = xhr.response;
+        var p = document.getElementById(post+"-likes");
+        p.innerHTML = responseObj;
+    };
 }
 function uploading(){
     window.location.href = "uploading.php";
@@ -253,11 +266,13 @@ window.onclick = function(event) {
         {
             event.target.style.color = "rgba(243,187,83)";
             event.target.id = "liked";
+            updatelikes("add", event.target.parentNode.parentNode.parentNode.id);
         }
         else if (event.target.id == "liked")
         {
             event.target.style.color = "black";
             event.target.id = "like";
+            updatelikes("less", event.target.parentNode.parentNode.parentNode.id);
         }
     }
     if (event.target.matches('.post') || event.target.matches('.avdiv') || event.target.matches('.avatar') || event.target.matches('.postimage') || event.target.matches('.commenticon') || event.target.matches('.fa-commenting-o')){
