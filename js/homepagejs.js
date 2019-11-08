@@ -115,29 +115,6 @@ function addpreviewpost(postid){
         img.src = post;
         img.setAttribute('class', 'prevpostimage');
         document.getElementById("previewpost").appendChild(img);
-    var div = document.createElement('div');
-        div.setAttribute('class', 'previmgic');
-        var idname2 = "prevpost-" + postid + "-" + username + "-imgic";
-        div.setAttribute('id', idname2);
-        document.getElementById("previewpost").appendChild(div);
-    var button = document.createElement('button');
-        var idname3 = "prev" + postid + "-imgic-like";
-        button.setAttribute('id', idname3);
-        button.setAttribute('class', 'prevlikeicon');
-        document.getElementById(idname2).appendChild(button);
-    var i = document.createElement('i');
-        i.setAttribute('class', 'prevthumbsup large fa fa-heart');
-        document.getElementById(idname3).appendChild(i);
-    var button = document.createElement('button');
-        var idname4 = "prev" + postid + "-imgic-comment";
-        button.setAttribute('id', idname4);
-        button.setAttribute('class', 'prevcommenticon');
-        var funct = "comment(\"" + idname4 + "\")";
-        //button.setAttribute('onclick', funct);
-        document.getElementById(idname2).appendChild(button);
-    var i = document.createElement('i');
-        i.setAttribute('class', 'prevcommenting large fa fa-commenting-o');
-        document.getElementById(idname4).appendChild(i);
 }
 function fillcommentsection(username, comment) {
     var commentsection = document.getElementsByClassName('commentsection');
