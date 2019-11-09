@@ -87,12 +87,13 @@ function user_add($username,$name,$avatar,$surname,$number,$email,$password,$ver
 		Your account has been created, you can start posting, commenting, and loging in after you have activated your account by pressing the url below.
 		 
 		Please click this link to activate your account:
-		localhost:81/backend/verify.php?email='.$email.'&hash='.$hash.'
+		http://localhost:80/Camagru/backend/verify.php?email='.$email.'&hash='.$hash.'
 		 
 		';
 		                     
 		$headers = 'From:noreply@klees&ldu-pree.camagru.com' . "\r\n";
-		mail($to, $subject, $message, $headers);
+        mail($to, $subject, $message, $headers);
+        mysqli_query($db,"INSERT INTO emails (recipient,email,header,type) VALUES ('$username','$to','$headers','verify')");
 	}
     posts($username);
     mysqli_close($db);

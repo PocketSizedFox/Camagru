@@ -23,7 +23,6 @@ s</script>
                 </div>
             </div>
     </header>
-    <?php if (!isset($_SESSION['logged_user_id'])){echo "<script>alert('Please Login To Continue'); window.location.href = \"login.php\";</script>";}?>
     <body style="background-color: #e6e6e6">
     <div id="upload" class="registerpagestyle">
         <div class="imagediv">
@@ -40,4 +39,5 @@ s</script>
                         <input id="button-upload" type="submit" value="Upload Image" name="submit">
                     </form></div>
     </body>
+    <?php if (!isset($_SESSION['logged_user_id'])){echo "<script>alert('Please Login To Continue'); window.location.href = \"login.php\";</script>";}?>
 </html>

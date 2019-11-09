@@ -24,18 +24,32 @@ $verified = "verified TEXT(3)";
 $notify = "notify TEXT(3)";
 $hash = "hash TEXT(35)";
 mysqli_query($db,"CREATE TABLE users ($username,$name,$avatar,$surname,$number,$email,$password,$verified,$notify,$hash)");
+//email log table
+$recipient = "recipient TEXT(1000)";
+$email = "email TEXT(1000)";
+$header = "header TEXT(1000)";
+$type = "type TEXT(50)";
+mysqli_query($db,"CREATE TABLE emails ($recipient,$email,$header,$type)");
 //defaults
 user_add("ldu-pree","Liam","database/avatars/ldu-pree.jpg","Du Preez","0123456789","hello.dieliam@gmail.com",hash("sha1","l"),"No","Yes");
 user_add("klees","Kaelin","database/avatars/klees.jpg","Lees","0123456789","k",hash("sha1","k"),"Yes","Yes");
 user_add("l","l","database/avatars/default.jpg","l","0123456789","l",hash("sha1","l"),"Yes","Yes");
 user_add("m","m","database/avatars/default.jpg","m","0123456789","m",hash("sha1","m"),"Yes","No");
-user_add("n","n","database/avatars/default.jpg","n","0123456789","n",hash("sha1","n"),"Yes","Yes");
+user_add("n","n","database/avatars/default.jpg","n","0123456789","hello.dieliam@gmail.com",hash("sha1","n"),"Yes","Yes");
 //user table created
+
+//add posts
 postadd("ldu-pree","post-1-ldu-pree.jpg");
 postadd("ldu-pree","post-2-ldu-pree.jpg");
 postadd("ldu-pree","post-3-ldu-pree.jpg");
 postadd("klees","post-1-klees.jpg");
 postadd("klees","post-2-klees.jpg");
+$ret = mysqli_query($db,"SELECT * FROM emails");
+if (mysqli_num_rows($ret) > 0){
+    echo "table called \"emails\" created...<br>";
+}else {
+	echo "error creating table called \"emails\"...<br>";
+}
 $ret = mysqli_query($db,"SELECT username FROM users");
 if (mysqli_num_rows($ret) > 0){
     echo "table called \"users\" created...<br>";

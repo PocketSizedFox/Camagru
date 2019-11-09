@@ -9,7 +9,7 @@
             echo "2<br>";
             return ;
         }
-        user_add($_POST['userusername'],$_POST['nameuser'],"database/avatars/default.jpg",$_POST['usersurname'],$_POST['usernumber'],$_POST['useremail'],hash("sha1",$_POST['userpass']),"no");
+        user_add($_POST['userusername'],$_POST['nameuser'],"database/avatars/default.jpg",$_POST['usersurname'],$_POST['usernumber'],$_POST['useremail'],hash("sha1",$_POST['userpass']),"No");
         echo "3<br>";
         header('location: ../login.php');
     }

@@ -13,6 +13,7 @@ $postid = (mysqli_num_rows($ret)+1);
 $postname = "post-".$postid."-".$username.".".strtolower(pathinfo(basename($_FILES["fileToUpload"]["name"]),PATHINFO_EXTENSION));
 $target_dir = "../database/posts/";
 $target_file = $target_dir.$postname;
+echo $target_file."<br";
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo(basename($_FILES["fileToUpload"]["name"]),PATHINFO_EXTENSION));
 
