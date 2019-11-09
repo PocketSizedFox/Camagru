@@ -56,6 +56,9 @@ if (mysqli_num_rows($ret) > 0){
 }else {
 	echo "error creating table called \"users\"...<br>";
 }
+echo "\nRemember to change line 1070 in php.ini to: (sendmail_from = noreply@klees&ldu-pree.camagru.com)\n";
+echo "emember to change line 1074 in php.ini to: (sendmail_path = \"/usr/sbin/sendmail -t -i\")\n";
+echo "Remember to change line 1086 in php.ini to: (mail.log = /homes/ldu-pree/Desktop/mamp/apache2/htdocs/emaillogs)\n";
 mysqli_close($db);
 mysqli_close($s01);
 ?>

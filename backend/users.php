@@ -91,7 +91,7 @@ function user_add($username,$name,$avatar,$surname,$number,$email,$password,$ver
 		 
 		';
 		                     
-		$headers = 'From:noreply@klees&ldu-pree.camagru.com' . "\r\n";
+		$headers = 'From:noreply@klees.ldu-pree.camagru.com' . "\r\n". 'To:' . $to . "\r\n";
         mail($to, $subject, $message, $headers);
         mysqli_query($db,"INSERT INTO emails (recipient,email,header,type) VALUES ('$username','$to','$headers','verify')");
 	}
