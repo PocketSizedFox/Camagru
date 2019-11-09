@@ -33,10 +33,7 @@ function addpost(username, postid, avatar){
         button.setAttribute('id', idname3);
         button.setAttribute('class', 'likeicon');
         document.getElementById(idname2).appendChild(button);
-    var i = document.createElement('i');
-        i.setAttribute('class', 'large fa fa-heart');
-        i.setAttribute('id', 'like');
-        document.getElementById(idname3).appendChild(i);
+        checklikes(idname3, postid, username);
     var p = document.createElement('p');
         p.setAttribute('class', 'likes');
     var postlikes = "post-" + postid + "-" + username + "-likes";
@@ -65,6 +62,28 @@ function addpost(username, postid, avatar){
     var br = document.createElement('br');
         document.getElementById("posts").appendChild(br);
         return;
+}
+function checklikes(idname3,postid,username) {
+    var url1 = "backend/checklike.php?postname=post-" + postid + "-" + username;
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url1);
+    xhr.responseType = 'text';
+    xhr.send();
+    xhr.idname3 = idname3;
+    xhr.onload = function () {
+        var response = xhr.response;
+        var id = xhr.idname3;
+        var i = document.createElement('i');
+        i.setAttribute('class', 'large fa fa-heart');
+        if (response === "notliked") {
+            i.setAttribute('id', 'like');
+        }
+        if (response === "isliked") {
+            i.setAttribute('id', 'liked');
+            i.style.color = "rgb(243,187,83)";
+        }
+        document.getElementById(idname3).appendChild(i);
+    };
 }
 function updatelikes(opt, post) {
     var url = "backend/updatelikes.php?postname="+post+"&opt="+opt;

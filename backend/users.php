@@ -56,8 +56,9 @@ function postcomment($username, $post_id) {
     $db = mysqli_connect("localhost:3306","username","password","Camagru");
     $user = "user TEXT(3000)";
     $comments = "comments TEXT(3000)";
+	$likes = "likes INT(255)";
     $name = "post-".$post_id."-".$username;
-    mysqli_query($db,"CREATE TABLE `$name` ($user, $comments)");
+    mysqli_query($db,"CREATE TABLE `$name` ($user, $comments, $likes)");
     mysqli_close($db);
 }
 function postadd($username,$image) {
