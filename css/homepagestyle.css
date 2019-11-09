@@ -404,6 +404,7 @@ hr {
     height: 0;
     left: 10;
     border-radius: 5px;
+    z-index: 5;
 }
 .uploadbutton{
   width: 100px;
@@ -432,4 +433,12 @@ hr {
   border-color: rgba(100, 100, 100, 0.8);
   color: white;
   background-color: rgba(100, 100, 100, 0.8);
+}
+.likes {
+    width: 20;
+    position: absolute;
+    top: -26px;
+    left: 40;
+    font-family: palatino;
+    font-size: 25;
 }
