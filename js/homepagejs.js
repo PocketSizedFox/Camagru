@@ -33,12 +33,11 @@ function addpost(username, postid, avatar){
         button.setAttribute('id', idname3);
         button.setAttribute('class', 'likeicon');
         document.getElementById(idname2).appendChild(button);
-    var i = document.createElement('i');
-        i.setAttribute('class', 'large fa fa-heart');
-        i.setAttribute('id', 'like');
-        document.getElementById(idname3).appendChild(i);
+        checklikes(idname3, postid, username);
     var p = document.createElement('p');
         p.setAttribute('class', 'likes');
+    var postlikes = "post-" + postid + "-" + username + "-likes";
+        p.setAttribute('id', postlikes);
         var url = "backend/likes.php?postname=post-"+postid+"-"+username+"&username="+username;
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url);
@@ -63,6 +62,39 @@ function addpost(username, postid, avatar){
     var br = document.createElement('br');
         document.getElementById("posts").appendChild(br);
         return;
+}
+function checklikes(idname3,postid,username) {
+    var url1 = "backend/checklike.php?postname=post-" + postid + "-" + username;
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url1);
+    xhr.responseType = 'text';
+    xhr.send();
+    xhr.idname3 = idname3;
+    xhr.onload = function () {
+        var response = xhr.response;
+        var id = xhr.idname3;
+        var i = document.createElement('i');
+        i.setAttribute('class', 'large fa fa-heart');
+        if (response === "notliked") {
+            i.setAttribute('id', 'like');
+        }
+        if (response === "isliked") {
+            i.setAttribute('id', 'liked');
+            i.style.color = "rgb(243,187,83)";
+        }
+        document.getElementById(idname3).appendChild(i);
+    };
+}
+function updatelikes(opt, post) {
+    var url = "backend/updatelikes.php?postname="+post+"&opt="+opt;
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.send();
+    xhr.onload = function () {
+        let responseObj = xhr.response;
+        var p = document.getElementById(post+"-likes");
+        p.innerHTML = responseObj;
+    };
 }
 function uploading(){
     window.location.href = "uploading.php";
@@ -102,29 +134,6 @@ function addpreviewpost(postid){
         img.src = post;
         img.setAttribute('class', 'prevpostimage');
         document.getElementById("previewpost").appendChild(img);
-    var div = document.createElement('div');
-        div.setAttribute('class', 'previmgic');
-        var idname2 = "prevpost-" + postid + "-" + username + "-imgic";
-        div.setAttribute('id', idname2);
-        document.getElementById("previewpost").appendChild(div);
-    var button = document.createElement('button');
-        var idname3 = "prev" + postid + "-imgic-like";
-        button.setAttribute('id', idname3);
-        button.setAttribute('class', 'prevlikeicon');
-        document.getElementById(idname2).appendChild(button);
-    var i = document.createElement('i');
-        i.setAttribute('class', 'prevthumbsup large fa fa-heart');
-        document.getElementById(idname3).appendChild(i);
-    var button = document.createElement('button');
-        var idname4 = "prev" + postid + "-imgic-comment";
-        button.setAttribute('id', idname4);
-        button.setAttribute('class', 'prevcommenticon');
-        var funct = "comment(\"" + idname4 + "\")";
-        //button.setAttribute('onclick', funct);
-        document.getElementById(idname2).appendChild(button);
-    var i = document.createElement('i');
-        i.setAttribute('class', 'prevcommenting large fa fa-commenting-o');
-        document.getElementById(idname4).appendChild(i);
 }
 function fillcommentsection(username, comment) {
     var commentsection = document.getElementsByClassName('commentsection');
@@ -253,11 +262,13 @@ window.onclick = function(event) {
         {
             event.target.style.color = "rgba(243,187,83)";
             event.target.id = "liked";
+            updatelikes("add", event.target.parentNode.parentNode.parentNode.id);
         }
         else if (event.target.id == "liked")
         {
             event.target.style.color = "black";
             event.target.id = "like";
+            updatelikes("less", event.target.parentNode.parentNode.parentNode.id);
         }
     }
     if (event.target.matches('.post') || event.target.matches('.avdiv') || event.target.matches('.avatar') || event.target.matches('.postimage') || event.target.matches('.commenticon') || event.target.matches('.fa-commenting-o')){
