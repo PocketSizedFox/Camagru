@@ -10,7 +10,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="css/profilestyle.css">
         <title>
-            Homepage
+            Profile
         </title>
     </head>
     <Header>
@@ -39,6 +39,12 @@
     <body style="background-color: #e6e6e6">
 		<div class="wrap">
             <div id="login" class="loginpagestyle">
+				<img id="avatar" class="avatar">
+				<div class="notifydiv">
+				<p style="height:20px;position:relative;top:5px;left:5px;">Would you like to recieve emails about new comments?
+				<button onclick="getnotify()" id="Yes" class="notify">Yes</button>
+				</p><script>checknotify();</script>
+				</div>
                 <form class="stylesigninform" action="./backend/logoutuser.php">
                 <button class="buttonstyle" type="submit" name="logout" ><b>Log-Out</b></button>
                 </form>
