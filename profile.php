@@ -42,6 +42,7 @@
                 <form class="stylesigninform" action="./backend/logoutuser.php">
                 <button class="buttonstyle" type="submit" name="logout" ><b>Log-Out</b></button>
                 </form>
+                <button class="buttonstyle" style="position: relative;top: 80px;" onclick="password()">Change Password</button>
 			</div>
 		</div>
     </body>

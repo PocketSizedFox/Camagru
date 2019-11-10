@@ -30,6 +30,15 @@ s</script>
         <div class="booth">
             <video id="video" width="400px" height="300px"></video>
             <a href="#" id="capture" class="booth-capture-button">Take Photo</a>
+            <form id="formElem" class="uploadingpagestyle" action="backend/upload.php" method="post" enctype="multipart/form-data">
+                        <img id="output" class="image">
+                        <input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpeg, image/jpg" onchange="loadFile(event)">
+                        <label for="button-upload">
+                        <button class="buttonstyle uploadposition">Upload</button> 
+                        </label>
+                        <br>
+                        <input id="button-upload" type="submit" value="Upload Image" name="submit">
+                    </form>
             <canvas id="canvas" width="400" height="300"></canvas>
             <img src="" alt="" id="photo">
         </div>

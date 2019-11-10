@@ -1,15 +1,35 @@
 <?php
 session_start();
+mysqli_connect("localhost:3306", "username", "password");
+$db = mysqli_connect("localhost:3306","username","password","Camagru");
+echo "test";
+if(isset($_GET['email']) && isset($_GET['hash']))
+{
+    $email = $_GET['email'];
+    $hash = $_GET['hash'];
+    $ret = mysqli_query($db,"SELECT email, chpass FROM users WHERE email='$email' AND `chpass`='$hash'");
+    $match  = mysqli_num_rows($ret);
+    $arr = mysqli_fetch_array($ret);
+    if ($match > 0){
+        mysqli_query($db,"UPDATE users SET verified='Yes' WHERE email='$email' AND hash='$hash'");
+    } else {
+        echo "The url is invalid.";
+        echo "<script>alert(\"incorrect link please try again\")window.location.href = \"homepage.php\";</script>";
+    }
+}else{
+    echo "Invalid approach, please use the link that has been send to your email.";
+}
+mysqli_close($db);
 ?>
 <html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<script src="js/uploadingjs.js">
+<script src="js/changepasswordjs.js">
 </script>
     <head>
-    <link rel="stylesheet" type="text/css" href="css/uploadingstyle.css">
+    <link rel="stylesheet" type="text/css" href="css/changepasswordstyle.css">
         <title>
-            Upload Page
+            Changepass
         </title>
     </head>
     <header>
@@ -24,20 +44,19 @@ session_start();
             </div>
     </header>
     <body style="background-color: #e6e6e6">
-    <div id="upload" class="registerpagestyle">
-        <div class="imagediv">
-        <form class="uploadingpagestyle" action="backend/upload.php" method="post" enctype="multipart/form-data">
-                        <img id="output" class="image">
-                        <label for="fileToUpload" class="custom-file-upload">
-                            Select File
-                        </label>
-                        <input type="file" name="fileToUpload" id="fileToUpload" accept="image/jpeg, image/jpg" onchange="loadFile(event)">
-                        <label for="button-upload">
-                        <button class="buttonstyle uploadposition">Upload</button> 
-                        </label>
-                        <br>
-                        <input id="button-upload" type="submit" value="Upload Image" name="submit">
-                    </form></div>
+    <div class="wrap">
+            <div id="login" class="loginpagestyle">
+            <form action="./backend/changepass.php" class="stylesigninform" method="post">
+                <div>
+                    <h1 style="color: white; font-family: Palatino;">Change Password</h1>
+                    <input type="password" placeholder="Enter Password" name="userpass" maxlength="50" required>
+                    <br>
+                    <input type="password" placeholder="Repeat Password" name="repeatpass" maxlength="50" required>
+                    <br>
+                    <button class="buttonstyle" type="submit" name="userlogin" value=NULL><b>Submit</b></button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </body>
-    <?php if (!isset($_SESSION['logged_user_id'])){echo "<script>alert('Please Login To Continue'); window.location.href = \"login.php\";</script>";}?>
 </html>
