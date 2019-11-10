@@ -23,7 +23,8 @@ $password = "password TEXT(50000)";
 $verified = "verified TEXT(3)";
 $notify = "notify TEXT(3)";
 $hash = "hash TEXT(35)";
-mysqli_query($db,"CREATE TABLE users ($username,$name,$avatar,$surname,$number,$email,$password,$verified,$notify,$hash)");
+$hash1 = "chpass TEXT(35)";
+mysqli_query($db,"CREATE TABLE users ($username,$name,$avatar,$surname,$number,$email,$password,$verified,$notify,$hash,$hash1)");
 //email log table
 $recipient = "recipient TEXT(1000)";
 $email = "email TEXT(1000)";
