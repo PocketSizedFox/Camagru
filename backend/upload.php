@@ -7,6 +7,7 @@ if (!isset($_SESSION['logged_user_id'])){
 $db = mysqli_connect("localhost:3306","username","password","Camagru");
 $username = $_SESSION['logged_user_id'];
 echo "(".$username.")";
+echo "{".$_POST['fileToUpload']."}";
 $tablename = $username."posts";
 $ret = mysqli_query($db,"SELECT id FROM `$tablename`");
 $postid = (mysqli_num_rows($ret)+1);
@@ -51,7 +52,7 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
         postadd($username,$postname);
-        header('location: ../homepage.php');
+        //header('location: ../homepage.php');
     } else {
         echo "Sorry, there was an error uploading your file.";
     }
