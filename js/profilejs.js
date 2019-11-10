@@ -38,12 +38,14 @@ function getnotify() {
         var response = xhr.response;
         if (response === "Yes") {
             setnotify("No");
-            document.getElementById("Yes").innerHTML = "No";
             document.getElementById("Yes").id = "No";
+            document.getElementById("No").style.left = "512px";
+            document.getElementById("holder").style.backgroundColor = "rgb(166, 166, 166)";
         } else if (response === "No") {
             setnotify("Yes");
-            document.getElementById("No").innerHTML = "Yes";
             document.getElementById("No").id = "Yes";
+            document.getElementById("Yes").style.left = "544px";
+            document.getElementById("holder").style.backgroundColor = "rgb(0, 156, 0)";
         }
     };
 }
@@ -55,9 +57,18 @@ function checknotify() {
     xhr.send();
     xhr.onload = function () {
         var response = xhr.response;
-        document.getElementById("Yes").innerHTML = response;
         document.getElementById("Yes").id = response;
+        if (response === "Yes") {
+            document.getElementById("Yes").style.left = "544px";
+            document.getElementById("holder").style.backgroundColor = "rgb(0, 156, 0)";
+        } else if (response === "No") {
+            document.getElementById("No").style.left = "512px";
+            document.getElementById("holder").style.backgroundColor = "rgb(166, 166, 166)";
+        }
     };
+}
+function logout() {
+    window.location.href = "backend/logoutuser.php";
 }
 
 function setnotify(val) {

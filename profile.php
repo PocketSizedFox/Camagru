@@ -41,14 +41,13 @@
             <div id="login" class="loginpagestyle">
 				<img id="avatar" class="avatar">
 				<div class="notifydiv">
-				<p style="height:20px;position:relative;top:5px;left:5px;">Would you like to recieve emails about new comments?
-				<button onclick="getnotify()" id="Yes" class="notify">Yes</button>
+				<p style="height:20px;position:relative;font-family: palatino;font-size: 22px;top:10px;left:5px;text-align:left;">Would you like to recieve emails about new comments?
+				<button id="holder" class="notify"></button>
+				<button onclick="getnotify()" id="Yes" class="notifyicon move"></button>
 				</p><script>checknotify();</script>
 				</div>
-                <form class="stylesigninform" action="./backend/logoutuser.php">
-                <button class="buttonstyle" type="submit" name="logout" ><b>Log-Out</b></button>
-                </form>
-                <button class="buttonstyle" style="position: relative;top: 80px;" onclick="password()">Change Password</button>
+				<button class="buttonstyle logout" onclick="logout()"><b>Log-Out</b></button>
+                <button class="buttonstyle chpass" onclick="password()">Change Password</button>
 			</div>
 		</div>
     </body>
