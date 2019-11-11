@@ -41,7 +41,7 @@
             <div id="login" class="loginpagestyle">
 				<img id="avatar" class="avatar">
 				<div class="notifydiv">
-				<p style="height:20px;position:relative;font-family: palatino;font-size: 22px;top:10px;left:5px;text-align:left;">Would you like to recieve emails about new comments?
+				<p style="height:20px;position:relative;font-family: palatino;font-size: 20.3px;top:10px;left:5px;text-align:left;">Would you like to recieve emails about new comments?
 				<button id="holder" class="notify"></button>
 				<button onclick="getnotify()" id="Yes" class="notifyicon move"></button>
 				</p><script>checknotify();</script>
