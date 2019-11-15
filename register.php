@@ -1,6 +1,24 @@
 
 <?php
 session_start();
+$name = $surname = $username = $phone = $email = $password = $reppassword = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["nameuser"]);
+  $surname = test_input($_POST["usersurname"]);
+  $username = test_input($_POST["userusername"]);
+  $phone = test_input($_POST["usernumber"]);
+  $email = test_input($_POST["useremail"]);
+  $password = test_input($_POST["password"]);
+  $reppassword = test_input($_POST["reppassword"]);
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 ?>
 <html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,32 +46,32 @@ session_start();
     <!-- Register form start -->
     <div class="wrap">
             <div id="register" class="registerpagestyle">
-                <form action="backend/reguser.php" method="post">
+                <form action="checkall()" method="post">
                     <div class="container">
                         <br>
                     <h1 class="login_title">Register</h1>
                     <p class="t_text">Please fill in this form to create an account.</p>
                     <br>
-                    <input class="registerform" type="text" placeholder="Enter Name" name="nameuser" maxlength="50" required>
+                    <input id="name" class="registerform" type="text" placeholder="Enter Name" name="nameuser" maxlength="50" onchange="checkname(event)" required>
 
-                    <input type="text" placeholder="Enter Surname" name="usersurname" maxlength="50" required>
+                    <input id="surname" type="text" placeholder="Enter Surname" name="usersurname" maxlength="50" onchange="checksurname(event)" required>
 
-                    <input type="text" placeholder="Enter Username" name="userusername" maxlength="50" required>
+                    <input id="username" type="text" placeholder="Enter Username" name="userusername" maxlength="50" onchange="checkusername(event)" required>
 
-                    <input type="text" placeholder="Enter Phone number" name="usernumber" maxlength="10" required>
+                    <input id="phone" type="text" placeholder="Enter Phone number" name="usernumber" maxlength="10" onchange="checkphone(event)" required>
 
-                    <input type="text" placeholder="Enter Email" name="useremail" maxlength="50" required>
+                    <input id="email" type="text" placeholder="Enter Email" name="useremail" maxlength="50" onchange="checkemail(event)" required>
 
-                    <input type="password" placeholder="Enter Password" name="userpass" maxlength="50" required>
+                    <input id="pass" type="password" placeholder="Enter Password" name="userpass" maxlength="50" required>
 
-                    <input type="password" placeholder="Repeat Password" name="userpass-repeat" maxlength="50" required>
+                    <input id="reppass" type="password" placeholder="Repeat Password" name="userpass-repeat" maxlength="50" onchange="checkpass(event)" required>
                     <br>
                     <button type="submit" class="buttonstyle" name="userreg_user" value="reg">Register</button>
                     </div>
           
                     <div class="container signin">
                     <p class="t_text">Already have an account?</p>
-                    <button class="buttonstyle" onclick="window.location.href='http://localhost:8080/Camagru/login.php'">Log In</button>
+                    <button class="buttonstyle" onclick="window.location.href='login.php'">Log In</button>
                     </div>
                 </form>
             </div>

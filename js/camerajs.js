@@ -23,12 +23,17 @@
     
     document.getElementById('capture').addEventListener('click', function() {
         context.drawImage(video, 0, 0, 400, 300);
-        photo.setAttribute('src', canvas.toDataURL('image/jpg'));
+        photo.setAttribute('src', canvas.toDataURL('image/jpeg'));
+    });
+    document.getElementById('save').addEventListener('click', function() {
+        var data = canvas.toDataURL('image/jpeg');
+        document.getElementById('my_hidden').value = data;
+        document.forms["form1"].submit();
     });
     document.getElementById('smoke').addEventListener('click', function() {
         sticker = new Image();
         sticker.src = 'database/stickers/smoke.png';
         context.drawImage(sticker, 0, 0, 400, 300);
-        photo.setAttribute('src', canvas.toDataURL('image/png'));
+        photo.setAttribute('src', canvas.toDataURL('image/jpeg'));
     });
 })();
