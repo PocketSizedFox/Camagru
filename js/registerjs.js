@@ -4,6 +4,21 @@ window.onclick = function(event) {
     }
     return;
 }
+var checkall = function() {
+    var name = document.getElementById('name');
+    var surname = document.getElementById('surname');
+    var user = document.getElementById('username');
+    var phone = document.getElementById('phone');
+    var email = document.getElementById('email');
+    var pass = document.getElementById('pass');
+    var reppass = document.getElementById('reppass');
+    if (name.style.border && name.style.border == "2px solid green" && surname.style.border == "2px solid green" && user.style.border == "2px solid green" && phone.style.border == "2px solid green" && email.style.border == "2px solid green" && pass.style.border == "2px solid green" && reppass.style.border == "2px solid green"){
+        document.forms["register"].submit();
+    } else {
+        alert("Please fill in all required areas");
+        window.location.href = "register.php";
+    }
+};
 var checkname = function(event) {
     var name = document.getElementById('name');
     if (event.target.value) {
@@ -52,7 +67,7 @@ var checkphone = function(event) {
       }
   };
 };
-var checkemail = function(event) {
+var checkuseremail = function(event) {
     var url1 = "backend/verify/checkemail.php?email="+ event.target.value;
     var xhr = new XMLHttpRequest();
     xhr.open('GET', url1);
@@ -60,11 +75,11 @@ var checkemail = function(event) {
     xhr.send();
     xhr.onload = function () {
         var response = xhr.response;
-        var user = document.getElementById('email');
+        var email = document.getElementById('email');
         if (response == 1){
-            user.style.border = "2px solid green";
+            email.style.border = "2px solid green";
         } else if (response == 0) {
-            user.style.border = "2px solid red";
+            email.style.border = "2px solid red";
         }
     };
 };

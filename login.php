@@ -51,7 +51,7 @@
                     </div>
                 </form>
                 <form class="stylesigninform" action="register.php">
-                <button class="buttonstyle" type="submit" name="register" ><b>Register</b></button>
+                <button class="buttonstyle" type="submit"><b>Register</b></button>
                 </form>
             </div>
         </div>
