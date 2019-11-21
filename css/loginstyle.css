@@ -29,6 +29,10 @@ input[type=password], select {
     box-sizing: border-box;
     outline: none;
 }
+.fpass {
+    position: relative;
+    top: 80;
+}
 .home {
     top: 0;
     right: 100%;
@@ -162,7 +166,7 @@ input[type=submit] {
 .loginpagestyle {
     position: relative;
     width: 500px;
-    height: 350px;
+    height: 400px;
     top: 25%;
     left: 50%;
     margin-left: -250;
@@ -202,4 +206,45 @@ body {
     border-color: rgba(100, 100, 100, 0.8);
     color: white;
     background-color: rgba(100, 100, 100, 0.8);
+  }
+  .fpassdiv {
+    display: none;
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    background: white;
+    border-radius: 10px;
+    left: 50%;
+    margin-left: -200px;
+    top: 40%;
+    z-index: 7;
+    text-align: center;
+  }
+  .closediv {
+    position: relative;
+    left: 184px;
+    top: 3px;
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    background-color: rgb(255,255,255,0.8);
+    font-family: Palatino;
+    outline: none;
+    font-size: 15px;
+  }
+  .closediv:hover {
+    border-color: rgba(100, 100, 100, 0.8);
+    color: white;
+    background-color: rgba(100, 100, 100, 0.8);
+  }
+  .fpassform {
+      text-align: center;
+  }
+  .blurdiv {
+    display: none;
+    position: absolute;
+    width: 99%;
+    height: 99%;
+    background: rgba(42,42,42,0.9);
+    z-index: 6;
   }
